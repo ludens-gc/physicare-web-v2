@@ -138,13 +138,22 @@ const RelationTabs = () => {
                             Ver perfil
                           </Button>
                           <Button
-                            colorScheme="yellow"
+                            colorScheme="green"
                             mr={2}
                             onClick={() => {
-                              navigate(`/sheets/${appointment?.pacientUid}`);
+                              navigate(`/measuresheets/${appointment?.pacientUid}`);
                             }}
                           >
-                            Ver ficha
+                            Ficha de Medidas
+                          </Button>
+                          <Button
+                            colorScheme="green"
+                            mr={2}
+                            onClick={() => {
+                              navigate(`/exercisesheets/${appointment?.pacientUid}`);
+                            }}
+                          >
+                            Ficha de Exercícios
                           </Button>
                         </Td>
                       </Tr>

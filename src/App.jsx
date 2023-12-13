@@ -7,7 +7,9 @@ import { useContext } from "react";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import Chats from "./pages/Chats";
-import Sheets from "./pages/Sheets";
+import Sheets from "./pages/MeasureSheets";
+import MeasureSheets from "./pages/MeasureSheets";
+import ExerciseSheet from "./pages/ExerciseSheets";
 
 const App = () => {
   const { currentUser } = useContext(AuthContext);
@@ -54,10 +56,18 @@ const App = () => {
           }
         />
         <Route
-          path="/Sheets"
+          path="/measuresheets/:pacientUid"
           element={
             <ProtectedRoute>
-              <Sheets />
+              <MeasureSheets />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/exercisesheets/:pacientUid"
+          element={
+            <ProtectedRoute>
+              <ExerciseSheet />
             </ProtectedRoute>
           }
         />
